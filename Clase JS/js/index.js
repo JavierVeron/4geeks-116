@@ -152,7 +152,7 @@ console.log(nombres3); */
     return valor * 1.21;
 } */
 
-// Opción #3 => Funciones fleces o arrow functions (No se utiliza la palabra función, sino "=>")
+// Opción #3 => Funciones flecha o arrow functions (No se utiliza la palabra función, sino "=>")
 const aplicarIVA = (valor) => {
     return valor * 1.21;
 }
@@ -160,16 +160,266 @@ const aplicarIVA = (valor) => {
 //aplicarIVA = "Diego"
 //console.log(typeof aplicarIVA);
 
-let importeConIVA = aplicarIVA(2000)
+/* let importeConIVA = aplicarIVA(2000)
 console.log("Importe Con IVA: $", importeConIVA);
-console.log("Importe Con IVA: $", aplicarIVA(2000));
+console.log("Importe Con IVA: $", aplicarIVA(2000)); */
 
 
+// IF (condición)
+/* let edad = 14
+
+if (edad >= 18) {
+    alert("Puedes tomar alcohol!")
+} */
+
+// IF..ELSE (condición)
+/* let edad = 24 */
+
+/* if (edad >= 18) {
+    alert("Puedes tomar alcohol!")
+} else {
+    alert("No, no puedes tomar alcohol!")
+} */
+
+/* if (edad < 18) {
+    alert("No, no puedes tomar alcohol!")
+} else {
+    alert("Puedes tomar alcohol!")
+} */
 
 
+// IF.. ELSE IF.. ELSE (condición)
+/* let temperatura = 40
+
+if (temperatura <= 10) {
+    alert("Hace mucho frío!")
+} else if (temperatura <= 20) {
+    alert("Está fresco!")
+} else if (temperatura <= 25) {
+    alert("Está agradable clima!");
+} else if (temperatura <= 35) {
+    alert("Hace calor!");
+} else {
+    alert("Ola de calor. No salgas de tu casa!")
+} */
 
 
+// Operador == (es igual a que) => comparar valores
+/* let color = "ROJo";
+color = color.toLowerCase(); // rojo
+
+if (color == "rojo") {
+    alert("Tu coche es de color rojo!")
+} */
+
+// Operador != (es distinto a que) => comparar valores distintos
+/* let color = "amarillo"
+
+if (color != "negro") {
+    alert("Estaís llevando ropa de color distinta a negro!")
+} */
+
+// Operador === (es igual a que) => compara valores y tipo de datos => más restrictiva
+/* let edad = "18"
+
+if (edad === 18) {
+    alert("Eres mayor de edad!")
+} */
+
+// Operador !== (es distinto a que) => comparar valores distintos y distintos tipo de datos
+/* let peso = 80
+
+if (peso !== "80") {
+    alert("Estaís delgado!")
+} */
+
+// Operador AND (&&)
+// V && V => V
+// V && F => F
+// F && V => F
+// F && F => F
+
+/* let edad = 10
+let dinero = 2
+let cerveza = 3
+
+if ((edad >= 18) && (dinero >= cerveza)) {
+    alert("Puedes tomar alcohol!")
+} else {
+    alert("No puedes tomar alcohol!")
+} */
+
+// Operador OR (||)
+// V || V => V 
+// V || F => V
+// F || V => V
+// F || F => F
+
+/* let edad = 19
+let dinero = 2
+let cerveza = 3
+
+if ((edad >= 18) || (dinero >= cerveza)) {
+    alert("Puedes tomar alcohol!")
+} else {
+    alert("No puedes tomar alcohol!")
+} */
+
+// Operador NOT (!) => -(-1) = 1
+//let isLoggedIn = {id:1, nombre:"Kevin", email:"kevin@gmail.com"}
+/* let isLoggedIn = null
+
+if (!isLoggedIn) {
+    alert("No estás Logueado al Sistema!")
+} */
 
 
+// Operador switch (es equivalente a if.. else if .. else)
+let color = "rojo"
 
+/* if (color == "rojo") {
+    alert("Has seleccionado el color rojo!");
+} else if (color == "verde") {
+    alert("Has seleccionado el color verde!");
+} else if (color == "azul") {
+    alert("Has seleccionado el color azul!");
+} else {
+    alert("Has seleccionado otro color!");
+} */
+
+/* switch(color) {
+    case "rojo":
+        alert("Has seleccionado el color rojo!");
+        break;
+    case "verde":
+        alert("Has seleccionado el color verde!");
+        break;
+    case "azul":
+        alert("Has seleccionado el color azul!");
+        break;
+    default:
+        alert("Has seleccionado otro color!");
+} */
+
+
+// Estructuras de iteración o bucles
+//console.log("Inicio de Programa");
+
+/* for (let i=0; i<10; i++) {
+    console.log("Número #" + i);   
+} */
+
+
+// Break y Continue
+/* for (let i=1; i<=20; i++) {
+    if (i == 10) {
+        console.log("Corte del ciclo!");
+        break;
+    }
+    
+    if (i == 5) {
+        console.log("Salto del ciclo!");
+        continue;
+    }
+    
+    console.log("Número #" + i);
+} */
+
+//console.log("Fin de Programa");
+
+
+// Otros ejemplos
+const autos = ["Audi", "BMW", "Citroen", "Fiat", "Mercedes", "Peugeot", "Volkswagen"];
+
+// Opción #1 => Utlizando for
+/* for (let i=0; i<autos.length; i++) {
+    console.log("#1- " + autos[i]);
+} */
+
+// Opción #2 => Utlizando el método foreach
+/* autos.forEach(indice => {
+    console.log("#2- " + indice);
+}) */
+
+// Opción #3 => Utlizando la función FOR OF (for..of) => válido para los arrays
+/* for (const elemento of autos) {
+    console.log("#3- " + elemento);
+} */
+
+// FOR.. IN => válido para los objetos
+/* for (const clave in auto) {
+    console.log("Clave: " + clave + " - Valor: " + auto[clave]);
+} */
+
+// While => Permite iterar infinitamente, pero es necesario definir una condición de corte
+/* let numero = 0
+let maximo = 20
+
+while (numero < maximo) {
+    console.log("Número #" + numero);
+    
+    if (numero == 10) {
+        console.log("Corte del ciclo!");
+        break;
+    }
+    
+    numero++;
+} */
+
+
+// Cómo seleccionar elementos html desde JS?
+// getElementById => Busca el primer elemento html que coincida con ese id
+/* const joaquin = document.getElementById("encabezado")
+console.log(joaquin);
+joaquin.className = "display-3 fw-bold bg-dark text-white p-3"
+joaquin.title = "Marta me ha hecho una pregunta"
+joaquin.innerHTML = "Joaquín"
+
+const parrafo = document.getElementById("parrafo");
+parrafo.innerHTML = '<div class="alert alert-light" role="alert">Esto es un párrafo!</div>'; */
+
+
+// Operador Ternario (if..else)
+let edad = 24;
+
+/* if (edad >= 18) {
+    alert("Puedes tomar alcohol!")
+} else {
+    alert("No, no puedes tomar alcohol!")
+} */
+
+//(condicion) ? verdadero : falso
+//(edad >= 18) ? alert("Puedes tomar alcohol!") : alert("No, no puedes tomar alcohol!")
+//alert(edad >= 18 ? "Puedes tomar alcohol!" : "No, no puedes tomar alcohol!")
+
+/* const puedesTomarAlcohol = edad >= 18 ? true : false
+alert(puedesTomarAlcohol ? "Puedes tomar alcohol!" : "No, no puedes tomar alcohol!") */
+
+//let temperatura = 4
+
+/* if (temperatura <= 10) {
+    alert("Hace mucho frío!")
+} else if (temperatura <= 25) {
+    alert("Está agradable clima!");
+} else if (temperatura <= 35) {
+    alert("Hace calor!");
+} else {
+    alert("Ola de calor. No salgas de tu casa!")
+} */
+
+/* temperatura <= 10 ? alert("Hace mucho frío!") : temperatura <= 25 ? alert("Está agradable clima!") : temperatura <= 35 ? alert("Hace calor!") : alert("Ola de calor. No salgas de tu casa!"); */
+
+// Variable local y global
+let valor = 10; // Variable global
+
+function multiplicarPor2() {
+    let valor = 4; // Variable local
+    let nombre = "Robert Towers"
+    
+    return valor * 2
+}
+
+//console.log(nombre);
+console.log("Variable Valor: " + valor);
+console.log("Ejecuto la función: " + multiplicarPor2());
 
