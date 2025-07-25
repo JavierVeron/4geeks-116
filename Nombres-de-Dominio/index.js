@@ -75,13 +75,13 @@ console.log("Total Puertas:", totalPuertas);
 const totalAPagar = autos.reduce((acumulador, item) => acumulador += item.precio, 20000)
 console.log("Total a Pagar:", totalAPagar); */
 
-const productos = [
+/* const productos = [
     {id:1, nombre:"CAMISETA CON ALGODÓN - LINO", precio:18, stock:1, categoria:"camisetas"},
     {id:2, nombre:"CAMISETA METALIZADA", precio:16, stock:2, categoria:"camisetas"},
     {id:3, nombre:"CAMISETA RIB ENCAJE", precio:18, stock:3, categoria:"camisetas"},
     {id:4, nombre:"TOP VOLANTES ZW COLLECTION", precio:36, stock:2, categoria:"camisas"},
     {id:5, nombre:"CAMISA DENIM CHORRERAS ZW COLLECTION", precio:40, stock:2, categoria:"camisas"}
-]
+] */
 
 /* const carrito = [
     {id:1, nombre:"CAMISETA CON ALGODÓN - LINO", precio:18, cantidad:1, categoria:"camisetas"},
@@ -91,12 +91,12 @@ const productos = [
     {id:5, nombre:"CAMISA DENIM CHORRERAS ZW COLLECTION", precio:38, cantidad:1, categoria:"camisas"}
 ] */
 
-const carrito = [];
+/* const carrito = [];
 
 console.log("Total elementos:", carrito.length);
 const totalProductos = carrito.reduce((acumulador, item) => acumulador += item.cantidad, 0)
 const totalAPagar = carrito.reduce((acumulador, item) => acumulador += item.precio * item.cantidad, 0)
-let total = 0;
+let total = 0; */
 
 /* carrito.forEach(item => {
     total += item.precio * item.cantidad
@@ -205,10 +205,9 @@ console.log("Ceil:",numero4);
 console.log("Floor:",numero5); */
 
 
-const apellidos = ["Fernandez", "Martinez", "Garcia", "Gomez"];
+/* const apellidos = ["Fernandez", "Martinez", "Garcia", "Gomez"];
 const numeroRandom1 = Math.round(Math.random() * (nombres1.length -1));
 const numeroRandom2 = Math.round(Math.random() * (apellidos.length - 1));
 
 const nombreYApellido = nombres1[numeroRandom1] + apellidos[numeroRandom2] + ".com";
-console.log(nombreYApellido.toLowerCase());
-
+console.log(nombreYApellido.toLowerCase()); */
