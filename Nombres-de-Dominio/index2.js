@@ -42,7 +42,10 @@ while (!cancelar) {
         contenido += item.id + "- " + item.nombre + " $" + item.precio + "\n";
     })
 
-    const productoSeleccionado = prompt("Ingrese el ID del Producto para agregar en el Carrito:\n\n"+contenido);
+    //const productoSeleccionado = prompt("Ingrese el ID del Producto para agregar en el Carrito:\n\n"+contenido);
+    const productoSeleccionado = prompt(`Ingrese el ID del Producto para agregar en el Carrito:
+        
+    ${contenido}`);
 
     if (!productoSeleccionado) {
         break;
