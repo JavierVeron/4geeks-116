@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM - 4Geeks Academy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body>
+    <h1 id="encabezado" title="Este es un encabezado" class="text-info">4geeks</h1>
+    <ul id="paises">
+        <li class="paises">España</li>
+        <li class="paises">Portugal</li>
+        <li class="paises">Francia</li>
+        <li class="paises">Italia</li>
+        <li>San Marino</li>
+    </ul>
+    <p>Sexo</p>
+    <input type="radio" name="sexo" id="sexo1" value="Femenino"> Femenino
+    <input type="radio" name="sexo" id="sexo2" value="Masculino"> Masculino
+    <input type="radio" name="sexo" id="sexo3" value="Masculino"> No Binario
+    <p class="paises">Argentina</p>
+    <p class="paises">Brasil</p>
+    <p class="paises">Uruguay</p>
+
+    <div class="container my-5">
+        <div class="row">
+            <div id="contenido" class="col-md-4">
+                <form id="formularioLogin">
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email">
+                        <div id="emailError" class="form-text"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="contrasena">
+                        <div id="contrasenaError" class="form-text"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="validarFormulario(event)">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
