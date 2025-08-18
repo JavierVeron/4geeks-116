@@ -25,9 +25,9 @@ const CiclosDeVida = () => {
     // Opción #1 => con dependencias vacías (solo se va a ejecutar 1 vez en el montaje del componante)
     useEffect(() => {
         console.log("#2 - Actualización del Componente");
-        fetch('https://fakestoreapi.com/products')
+        /* fetch('https://fakestoreapi.com/products')
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => console.log(data)); */
 
         return () => { // función de CleanUp
             // El código de limpieza aquí se ejecuta en el desmontaje del componente
