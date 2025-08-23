@@ -1,9 +1,9 @@
-import RepasoEstados from './RepasoEstados';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
     <>
-      <RepasoEstados />
+      <TodoList />
     </>
   )
 }

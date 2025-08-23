@@ -3,3 +3,11 @@
   background-color: blue;
   padding: 20px;
 }
+
+.mostrarBotonCerrar {
+  opacity: 1;
+}
+
+.ocultarBotonCerrar {
+  opacity: 0.2;
+}
