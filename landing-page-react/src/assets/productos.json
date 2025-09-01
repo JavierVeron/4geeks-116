@@ -1,0 +1,6 @@
+[
+    {"id":1, "marca":"Woman El Corte Inglés", "descripcion":"Top sin mangas estampado de mujer", "precio":39.99, "imagen":"https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202506/02/00151020203132____5__967x1200.jpg?impolicy=Resize&width=1200", "categoria":"mujer"},
+    {"id":2, "marca":"Adolfo Dominguez", "descripcion":"Vestido midi plisado con cadena", "precio":229, "imagen":"https://dam.elcorteingles.es/producto/www-8445574388888-00.jpg?impolicy=Resize&width=967&height=1200", "categoria":"mujer"},
+    {"id":3, "marca":"Emidio Tucci", "descripcion":"Camisa lino rayas de hombre Emidio Tucci", "precio":47.95, "imagen":"https://cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/202507/11/00100412742447____5__967x1200.jpg?impolicy=Resize&width=1200", "categoria":"hombre"},
+    {"id":4, "marca":"Adolfo Dominguez", "descripcion":"Camiseta de hombre regular fit de manga corta", "precio":49, "imagen":"https://dam.elcorteingles.es/producto/www-8445574380509-00.jpg?impolicy=Resize&width=967&height=1200", "categoria":"hombre"}
+]
