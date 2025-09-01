@@ -9,7 +9,49 @@
 <body>
     <div class="container my-5">
         <div id="contenido" class="row">
+            <div class="col">
+                <h2>Crear Usuario</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre">
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="precio" class="form-label">Preio</label>
+                        <input type="text" class="form-control" id="precio">
+                    </div> -->
+                    <button type="button" class="btn btn-primary" onclick="crearUsuario()">Enviar</button>
+                </form>
+            </div>
+            <div class="col">
+                <h2>Listar Usuarios</h2>
+                <div id="resultado"></div>
+            </div>
         </div>
+        <div class="row my-5">
+            <div class="col">
+                <h2>Crear Tarea</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="tarea" class="form-label">Tarea</label>
+                        <input type="text" class="form-control" id="tarea_nombre">
+                    </div>
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">Completada</label>
+                        <select id="tarea_completada" class="form-control">
+                            <option value="true">Sí</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="crearTarea()">Enviar</button>
+                </form>
+            </div>
+            <div class="col">
+                <h2>Listar Tareas</h2>
+                <div id="resultado_tareas"></div>
+            </div>
+        </div>
+
     </div>
 
     <script src="js/index.js"></script>
