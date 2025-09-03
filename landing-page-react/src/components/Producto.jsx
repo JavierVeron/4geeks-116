@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import productosJSON from "../assets/productos.json";
 import { useParams } from "react-router-dom";
+//import { CartContext } from "./context/CartContext";
+import { CartContextReducer } from "./context/CartContextReducer";
 
 const Producto = () => {
     const [item, setItem] = useState({});
-    const {productoId} = useParams();
+    const {productoId} = useParams(); // captura los parámetro en formato "string"
     console.log(productoId);
+    const {agregarProducto} = useContext(CartContextReducer);
 
     useEffect(() => {
         setItem(productosJSON.find(item => item.id == productoId))
@@ -21,6 +24,7 @@ const Producto = () => {
                     <h1>{item.marca}</h1>
                     <p>{item.descripcion}</p>
                     <p>${item.precio}</p>
+                    <p><button className="btn btn-dark" onClick={() => {agregarProducto(item.id)}}>Agregar al Carrito</button></p>
                 </div>
             </div>
         </div>

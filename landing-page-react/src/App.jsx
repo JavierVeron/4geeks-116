@@ -1,3 +1,6 @@
+import CarritoContext from './components/CarritoContext';
+import ContadorConReducer from './components/ContadorConReducer';
+import Error404 from './components/Error404';
 import MiCuenta from './components/MiCuenta';
 import NavBar from './components/NavBar';
 import Producto from './components/Producto';
@@ -15,6 +18,8 @@ function App() {
           <Route path={"/productos/:id"} element={<Productos />} />
           <Route path={"/producto/:productoId"} element={<Producto />} />
           <Route path={"/mi-cuenta"} element={<MiCuenta />} />
+          <Route path={"/carrito"} element={<CarritoContext />} />
+          <Route path={"*"} element={<Error404 />} />
         </Routes>
       </BrowserRouter>
     </>
