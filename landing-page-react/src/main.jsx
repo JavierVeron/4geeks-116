@@ -1,9 +1,8 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-//import CartContextProvider from './components/context/CartContext.jsx'
-import CartContextReducerProvider from './components/context/CartContextReducer.jsx'
+import ListaContactosProvider from './components/context/ListaContactosContext.jsx'
 
-createRoot(document.getElementById('root')).render(<CartContextReducerProvider>
+createRoot(document.getElementById('root')).render(<ListaContactosProvider>
     <App />
-</CartContextReducerProvider>)
+</ListaContactosProvider>)
