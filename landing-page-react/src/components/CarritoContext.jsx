@@ -5,7 +5,7 @@ import { CartContextReducer } from "./context/CartContextReducer";
 const CarritoContext = () => {
     const {state, eliminarProducto, vaciarCarrito} = useContext(CartContextReducer);
     
-    if (state.carrito.length == 0) {
+    if (state.total == 0) {
         return (
             <div className="container my-5">
                 <div className="row">
@@ -35,13 +35,18 @@ const CarritoContext = () => {
                                         <td className="text-start">
                                             <p className="fw-light"><b>{producto.marca}</b><br />{producto.descripcion}</p>
                                         </td>
-                                        <td>${producto.precio}</td>
-                                        <td>x{producto.cantidad}</td>
-                                        <td>${(producto.precio * producto.cantidad).toFixed(2)}</td>
+                                        <td className="text-center">${producto.precio}</td>
+                                        <td className="text-center">x{producto.cantidad}</td>
+                                        <td className="text-center">${(producto.precio * producto.cantidad).toFixed(2)}</td>
                                         <td className="text-end"><button className="btn btn-dark" onClick={() => {eliminarProducto(producto.id)}}>Eliminar</button></td>
                                     </tr>
                                 ))
                             }
+                            <tr>
+                                <td className="text-center" colSpan={4}><b>Total a Pagar</b></td>
+                                <td className="text-center"><b>${state.suma}</b></td>
+                                <td>-</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

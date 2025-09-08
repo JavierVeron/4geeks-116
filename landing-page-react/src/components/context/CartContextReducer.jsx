@@ -4,9 +4,15 @@ import { CartReducer } from "./CartReducer";
 // Definir el nombre de nuestro Contexto
 export const CartContextReducer = createContext();
 
+const initialState = {
+    carrito:[],
+    total:0,
+    suma:0
+}
+
 // Definir un Context Provider
 const CartContextReducerProvider = ({children}) => {
-    const [state, dispatch] = useReducer(CartReducer, {carrito:[]})
+    const [state, dispatch] = useReducer(CartReducer, initialState)
 
     const agregarProducto = (id) => {
         dispatch({type:"AGREGAR_PRODUCTO", payload:id});

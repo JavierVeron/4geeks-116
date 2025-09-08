@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { CartContextReducer } from "./context/CartContextReducer"
 
 const NavBar = () => {
+    const {state} = useContext(CartContextReducer);
+
     return (
         <div className="container my-5">
             <div className="container">
@@ -22,7 +26,7 @@ const NavBar = () => {
                                 <Link to={"/productos/mujer"} className="nav-link text-dark">Mujer</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to={"/carrito"} className="nav-link text-dark">Carrito</Link>
+                                <Link to={"/carrito"} className="nav-link text-dark">Carrito <b>({state.total})</b></Link>
                             </li>
                         </ul>
                     </div>
