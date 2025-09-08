@@ -44,8 +44,8 @@ const CarritoContext = () => {
                             }
                             <tr>
                                 <td className="text-center" colSpan={4}><b>Total a Pagar</b></td>
-                                <td className="text-center"><b>${state.suma}</b></td>
-                                <td>-</td>
+                                <td className="text-center"><b>${state.suma.toFixed(2)}</b></td>
+                                <td className="text-end">&nbsp;</td>
                             </tr>
                         </tbody>
                     </table>

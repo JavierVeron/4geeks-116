@@ -1,5 +1,6 @@
 import { createContext, useReducer, useState } from "react";
 import { CartReducer } from "./CartReducer";
+import { cargarLS } from "./localStorage";
 
 // Definir el nombre de nuestro Contexto
 export const CartContextReducer = createContext();
@@ -12,7 +13,7 @@ const initialState = {
 
 // Definir un Context Provider
 const CartContextReducerProvider = ({children}) => {
-    const [state, dispatch] = useReducer(CartReducer, initialState)
+    const [state, dispatch] = useReducer(CartReducer, cargarLS(initialState))
 
     const agregarProducto = (id) => {
         dispatch({type:"AGREGAR_PRODUCTO", payload:id});

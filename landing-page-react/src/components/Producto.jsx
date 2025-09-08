@@ -7,7 +7,7 @@ import { CartContextReducer } from "./context/CartContextReducer";
 const Producto = () => {
     const [item, setItem] = useState({});
     const {productoId} = useParams(); // captura los parámetro en formato "string"
-    console.log(productoId);
+    //console.log(productoId);
     const {agregarProducto} = useContext(CartContextReducer);
 
     useEffect(() => {

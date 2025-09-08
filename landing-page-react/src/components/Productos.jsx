@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 const Productos = () => {
     const [items, setItems] = useState(productosJSON);
     const {id} = useParams();
-    console.log(id);
+    //console.log(id);
     
     useEffect(() => {
         setItems(id ? productosJSON.filter(item => item.categoria == id) : productosJSON)
