@@ -40,20 +40,17 @@ def getOrAddUser():
 def getOrDeleteUser(id):
     result = User.query.get(id)
 
+    if result is None:
+        return jsonify({"estado":"error", "mensaje":"No se encontró al Usuario!"}), 400
+    
     if (request.method == "GET"):
-        if (result):
-            return User.serialize(result)
-        else:
-            return jsonify({"estado":"error", "mensaje":"No se encontró al Usuario!"}), 400
-        
+        return User.serialize(result)    
     elif (request.method == "DELETE"):
-        if (result):
-            db.session.delete(result)
-            db.session.commit()
-            return jsonify({"estado":"ok", "mensaje":"El Usuario se eliminó correctamente!"})
-        else:
-            return jsonify({"estado":"error", "mensaje":"No se pudo eliminar al Usuario!"}), 400
-
+        db.session.delete(result)
+        db.session.commit()
+        
+        return jsonify({"estado":"ok", "mensaje":"El Usuario se eliminó correctamente!"})
+    
 @app.route("/token", methods=["POST"])
 def generateToken():
     username = request.json.get("username", None)
