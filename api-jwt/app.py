@@ -1,24 +1,30 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config["JWT_SECRET_KEY"] = "4geeks"
 db = SQLAlchemy(app)
 jwt = JWTManager(app)
+CORS(app)
 
 class User(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(250), nullable=False)
+    lastname = db.Column(db.String(250), nullable=False)
     username = db.Column(db.String(250), nullable=False)
     password = db.Column(db.String(250), nullable=False)
 
     def serialize(self):
         return {
             "id": self.id,
+            "name": self.name,
+            "lastname": self.lastname,
             "username": self.username,
-            "password": self.password,
+            "password": self.password
         }
     
 @app.route("/users", methods=["GET", "POST"])
@@ -30,7 +36,7 @@ def getOrAddUser():
         return jsonify(result)
     elif (request.method == "POST"):
         datos = request.get_json()
-        result = User(username=datos["username"], password=datos["password"])
+        result = User(name=datos["name"], lastname=datos["lastname"], username=datos["username"], password=datos["password"])
         db.session.add(result)
         db.session.commit()
 
@@ -62,7 +68,7 @@ def generateToken():
     
     access_token = create_access_token(identity=str(user.id))
 
-    return jsonify({ "token": access_token, "user_id": user.id })
+    return jsonify({ "token": access_token, "user_id": user.id, "user_name": user.name, "user_username": user.username })
 
 @app.route("/protected", methods=["GET"])
 @jwt_required()
@@ -70,7 +76,10 @@ def protected():
     current_user_id = get_jwt_identity()
     user = User.query.get(current_user_id)
 
-    return jsonify({"id": user.id, "username": user.username }), 200
+    if user is None:
+        return jsonify({"msg": "No sé encontró un Usuario!"}), 401
+
+    return jsonify({"id": user.id, "name": user.name, "lastname": user.lastname, "username": user.username }), 200
 
 if __name__ == '__main__':
     with app.app_context():
