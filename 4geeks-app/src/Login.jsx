@@ -1,11 +1,26 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [resultado, setResultado] = useState("");
+    const [icono, setIcono] = useState("bi bi-emoji-frown");
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (password.length < 4) {
+            setIcono("bi bi-emoji-frown");
+        } else if (password.length < 8) {
+            setIcono("bi bi-emoji-neutral");
+        } else if (password.length < 12) {
+            setIcono("bi bi-emoji-smile");
+        } else if (password.length < 16) {
+            setIcono("bi bi-emoji-laughing");
+        } else {
+            setIcono("bi bi-emoji-sunglasses");
+        }
+    }, [password])
 
     const loginUser = async () => {              
         const resp = await fetch(`http://127.0.0.1:5000/token`, { 
@@ -47,6 +62,7 @@ const Login = () => {
                         <div className="mb-3">
                             <label className="form-label">Password</label>
                             <input type="password" className="form-control" value={password} onInput={(e) => {setPassword(e.target.value)}} />
+                            <p className="bg-body-secondary mt-3 p-2">Nivel de Seguridad <i className={icono}></i></p>
                         </div>
                         <button type="button" className="btn btn-primary" onClick={loginUser}>Enviar</button>
                     </form>
