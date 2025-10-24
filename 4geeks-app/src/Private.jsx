@@ -1,33 +1,24 @@
 import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Private = () => {
-    const [name, setName] = useState("");
-    const navigate = useNavigate();
+    const [name, setName] = useState("");    
 
     useEffect(() => {
-        const token = localStorage.getItem('jwt-token');        
+        const token = localStorage.getItem('jwt-token');          
 
-        if (token) {
-            (async () => {
-                const resp = await fetch(`http://127.0.0.1:5000/protected`, { 
-                    method: 'GET',
-                    headers: { 
-                        "Content-Type": "application/json",
-                        'Authorization': 'Bearer ' + token // ⬅⬅⬅ authorization token
-                    }
-                })
-
-                if (!resp.ok) {
-                    navigate("/login", {replace:true});
+        (async () => {
+            const resp = await fetch(`http://127.0.0.1:5000/protected`, { 
+                method: 'GET',
+                headers: { 
+                    "Content-Type": "application/json",
+                    'Authorization': 'Bearer ' + token // ⬅⬅⬅ authorization token
                 }
+            })
 
-                const data = await resp.json();
-                setName(data.name);
-            })();
-        } else {
-            navigate("/login", {replace:true});
-        }
+            const data = await resp.json();
+            setName(data.name);
+        })();
     }, [])
 
     return (

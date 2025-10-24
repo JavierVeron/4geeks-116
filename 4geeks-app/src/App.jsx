@@ -3,6 +3,7 @@ import Login from './Login'
 import SignUp from "./Signup"
 import Private from "./Private"
 import Logout from "./Logout"
+import RutaProtegida from "./RutaProtegida"
 
 function App() {
   return (
@@ -11,7 +12,9 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/private" element={<Private />} />
+        <Route element={<RutaProtegida />}>
+          <Route path="/private" element={<Private />} />
+        </Route>
         <Route path="/logout" element={<Logout />} />
       </Routes>
     </BrowserRouter>
